@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+.next/
+.claude/skills/
+.claude/settings.local.json
