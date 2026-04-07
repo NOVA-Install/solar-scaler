@@ -187,7 +187,7 @@ function ChatMockup() {
   return (
     <div style={{ background: '#f4f7f9', borderRadius: 10, padding: 10, border: '1px solid rgba(15,29,42,0.08)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-        <div style={{ width: 16, height: 16, borderRadius: 5, background: '#4abde8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 7, fontWeight: 900, color: '#fff' }}>N</div>
+        <div style={{ width: 16, height: 16, borderRadius: 5, background: '#4abde8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 7, fontWeight: 900, color: '#fff' }}>S</div>
         <span style={{ fontSize: 9, fontWeight: 600, color: '#0f1d2a' }}>Solar Scaler Team</span>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 3 }}>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#3ab870', display: 'block' }} />
