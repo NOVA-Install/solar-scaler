@@ -25,7 +25,6 @@ export default function ApplyPage() {
           >
             SOLAR SCALER
           </span>
-          <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(14px, 2vw, 20px)' }}>SOLAR SCALER</span>
         </div>
         <div className="w-10" /> {/* spacer to keep wordmark centred */}
       </header>
