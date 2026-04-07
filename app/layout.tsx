@@ -25,9 +25,6 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Solar Scaler',
   description: 'More installs. Less chasing. No long-term contracts.',
-  icons: {
-    icon: '/assets/favicon.jpg',
-  },
 }
 
 export default function RootLayout({
