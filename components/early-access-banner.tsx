@@ -188,7 +188,7 @@ function ChatMockup() {
     <div style={{ background: '#f4f7f9', borderRadius: 10, padding: 10, border: '1px solid rgba(15,29,42,0.08)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
         <div style={{ width: 16, height: 16, borderRadius: 5, background: '#4abde8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 7, fontWeight: 900, color: '#fff' }}>N</div>
-        <span style={{ fontSize: 9, fontWeight: 600, color: '#0f1d2a' }}>NOVA Team</span>
+        <span style={{ fontSize: 9, fontWeight: 600, color: '#0f1d2a' }}>Solar Scaler Team</span>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 3 }}>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#3ab870', display: 'block' }} />
           <span style={{ fontSize: 7, color: '#3ab870', fontWeight: 600 }}>Online</span>
@@ -256,7 +256,7 @@ const valueRows = [
   {
     badge: 'Included for free',
     worth: '£500/mo value',
-    label: 'Full NOVA platform',
+    label: 'Full Solar Scaler platform',
     sub: 'CRM, lead generation, customer communication.',
     mockup: 'platform',
   },
@@ -264,7 +264,7 @@ const valueRows = [
     badge: 'Included for free',
     worth: 'Potential free installs',
     label: 'Exclusive high-intent marketplace leads',
-    sub: "Early partners gain access to NOVA's own high-intent solar leads.",
+    sub: "Early partners gain access to Solar Scaler's own high-intent solar leads.",
     mockup: 'marketplace',
   },
   {
@@ -287,8 +287,7 @@ export default function EarlyAccessBanner() {
             <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(16px, 2vw, 22px)' }}>
               SOLAR SCALER
             </span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 400, fontSize: 'clamp(11px, 1vw, 13px)', color: 'var(--tx3)' }}>by</span>
-            <img src="/nova-logo-black.png" alt="NOVA" style={{ height: 'clamp(18px, 2vw, 24px)', width: 'auto' }} />
+              <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(14px, 1.8vw, 20px)' }}>SOLAR SCALER</span>
           </div>
         </motion.div>
 

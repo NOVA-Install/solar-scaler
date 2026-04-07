@@ -13,7 +13,7 @@ const sources = [
   { name: 'Digital Ads',      dot: '#4abde8', leads: 47, bar: 0.76 },
   { name: 'Door Knocking',    dot: '#f4ab3a', leads: 19, bar: 0.34 },
   { name: 'Referrals',        dot: '#3ab870', leads: 14, bar: 0.26 },
-  { name: 'NOVA Marketplace', dot: null,      leads: 23, bar: 0.52, nova: true },
+  { name: 'Solar Scaler Marketplace', dot: null,      leads: 23, bar: 0.52, featured: true },
 ] as const
 
 function LeadSourcesPanel({ fullWidth = false }: { fullWidth?: boolean }) {
@@ -25,23 +25,23 @@ function LeadSourcesPanel({ fullWidth = false }: { fullWidth?: boolean }) {
         <div key={s.name} style={{
           padding: '8px 12px',
           borderBottom: i < sources.length - 1 ? '1px solid rgba(15,29,42,0.05)' : undefined,
-          background: s.nova ? 'linear-gradient(135deg, #0c1d2e 0%, #0f2640 100%)' : '#fff',
+          background: s.featured ? 'linear-gradient(135deg, #0c1d2e 0%, #0f2640 100%)' : '#fff',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 5 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-              {s.nova ? (
+              {s.featured ? (
                 <div style={{ width: 16, height: 16, borderRadius: 4, background: 'linear-gradient(135deg, #0c1d2e 0%, #0f2640 100%)', border: '1.5px solid rgba(74,189,232,0.4)', boxShadow: '0 0 8px rgba(74,189,232,0.5), inset 0 1px 0 rgba(255,255,255,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'white', fontSize: 7, lineHeight: 1 }}>N</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'white', fontSize: 5, lineHeight: 1 }}>SS</span>
                 </div>
               ) : (
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: s.dot!, display: 'inline-block', flexShrink: 0 }} />
               )}
-              <span style={{ fontSize: 9, fontWeight: s.nova ? 700 : 600, color: s.nova ? '#fff' : '#3a4d5e', whiteSpace: 'nowrap' }}>{s.name}</span>
+              <span style={{ fontSize: 9, fontWeight: s.featured ? 700 : 600, color: s.featured ? '#fff' : '#3a4d5e', whiteSpace: 'nowrap' }}>{s.name}</span>
             </div>
-            <span style={{ fontSize: 9, fontWeight: 700, color: s.nova ? '#4abde8' : '#0f1d2a', marginLeft: 6 }}>{s.leads}</span>
+            <span style={{ fontSize: 9, fontWeight: 700, color: s.featured ? '#4abde8' : '#0f1d2a', marginLeft: 6 }}>{s.leads}</span>
           </div>
-          <div style={{ height: 3, background: s.nova ? 'rgba(255,255,255,0.1)' : 'rgba(15,29,42,0.07)', borderRadius: 2 }}>
-            <div style={{ height: 3, background: s.nova ? '#4abde8' : s.dot!, borderRadius: 2, width: `${s.bar * 100}%`, boxShadow: s.nova ? '0 0 6px #4abde8' : undefined }} />
+          <div style={{ height: 3, background: s.featured ? 'rgba(255,255,255,0.1)' : 'rgba(15,29,42,0.07)', borderRadius: 2 }}>
+            <div style={{ height: 3, background: s.featured ? '#4abde8' : s.dot!, borderRadius: 2, width: `${s.bar * 100}%`, boxShadow: s.featured ? '0 0 6px #4abde8' : undefined }} />
           </div>
         </div>
       ))}

@@ -108,7 +108,7 @@ export default function Section01() {
                 border: '1.5px solid rgba(74,189,232,0.4)',
                 boxShadow: '0 8px 32px rgba(74,189,232,0.25), inset 0 1px 0 rgba(255,255,255,0.07)',
               }}>
-                <Image src="/nova-logo-white.png" alt="NOVA" width={56} height={20} style={{ width: 56, height: 'auto', objectFit: 'contain' }} />
+                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'white', fontSize: 10, letterSpacing: '0.06em' }}>SOLAR SCALER</span>
               </div>
             </div>
             <div className="flex flex-col gap-2 self-start w-full">

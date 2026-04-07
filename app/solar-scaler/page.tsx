@@ -7,7 +7,7 @@ import EarlyAccessBanner from '@/components/early-access-banner'
 import Footer from '@/components/footer'
 
 export const metadata = {
-  title: 'NOVA — Solar Scaler Program',
+  title: 'Solar Scaler',
   description: 'From lead generation to closed job — one system, built exclusively for solar, managed end to end.',
 }
 

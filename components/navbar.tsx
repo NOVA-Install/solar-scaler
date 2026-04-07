@@ -58,10 +58,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <div className="flex items-center gap-2 mr-2 shrink-0">
-          <div className="w-7 h-7 rounded-md bg-[var(--sky)] flex items-center justify-center">
-            <span className="text-white font-black text-sm leading-none">N</span>
-          </div>
-          <span className="font-bold text-[var(--tx)] text-base tracking-tight">NOVA</span>
+          <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 16 }}>SOLAR SCALER</span>
         </div>
 
         {/* CTA — right side */}

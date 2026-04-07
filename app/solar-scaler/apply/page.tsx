@@ -2,8 +2,8 @@ import Image from 'next/image'
 import ApplyForm from '@/components/apply-form'
 
 export const metadata = {
-  title: 'Apply — NOVA Solar Scaler',
-  description: 'Apply for one of 5 early access spots on the NOVA Solar Scaler program.',
+  title: 'Apply — Solar Scaler',
+  description: 'Apply for one of 5 early access spots on the Solar Scaler program.',
 }
 
 export default function ApplyPage() {
@@ -25,8 +25,7 @@ export default function ApplyPage() {
           >
             SOLAR SCALER
           </span>
-          <span style={{ fontWeight: 400, opacity: 0.4, color: 'var(--tx)', fontSize: 'clamp(11px, 1.4vw, 15px)' }}>by</span>
-          <Image src="/nova-logo-black.png" alt="NOVA" width={64} height={22} className="h-5 w-auto object-contain opacity-80" />
+          <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(14px, 2vw, 20px)' }}>SOLAR SCALER</span>
         </div>
         <div className="w-10" /> {/* spacer to keep wordmark centred */}
       </header>
@@ -38,7 +37,7 @@ export default function ApplyPage() {
 
       {/* Footer */}
       <footer className="border-t border-[var(--bd)] px-6 py-8 flex justify-center">
-        <p className="text-[var(--tx3)] text-xs">© {new Date().getFullYear()} NOVA. All rights reserved.</p>
+        <p className="text-[var(--tx3)] text-xs">© {new Date().getFullYear()} Solar Scaler. All rights reserved.</p>
       </footer>
 
     </main>

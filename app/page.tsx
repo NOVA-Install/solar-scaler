@@ -1,40 +1,28 @@
-import OSNavbar from '@/components/os/navbar'
-import OSHeroSection from '@/components/os/hero-section'
-import OSProblemSection from '@/components/os/problem-section'
-import OSFeaturesSection from '@/components/os/features-section'
-import OSCallSection from '@/components/os/call-section'
-import OSMarketplaceSection from '@/components/os/marketplace-section'
-import OSCtaSection from '@/components/os/cta-section'
-import OSFooter from '@/components/os/footer'
+import HeroSection from '@/components/hero-section'
+import ProcessHeader from '@/components/process-header'
+import Section01 from '@/components/section-01'
+import Section02 from '@/components/section-02'
+import Section03 from '@/components/section-03'
+import EarlyAccessBanner from '@/components/early-access-banner'
+import Footer from '@/components/footer'
 
 export const metadata = {
-  title: 'NOVA - The AI-Native OS for Installers',
-  description: 'Your entire install operations. One platform. Built for home energy installers. AI runs your pipeline so you can focus on installs.',
-  openGraph: {
-    title: 'NOVA - The AI-Native OS for Installers',
-    description: 'Your entire install operations. One platform. Built for home energy installers. AI runs your pipeline so you can focus on installs.',
-    images: ['/assets/og-image.png'],
-    url: 'https://novainstall.co.uk',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'NOVA - The AI-Native OS for Installers',
-    description: 'Your entire install operations. One platform. Built for home energy installers. AI runs your pipeline so you can focus on installs.',
-    images: ['/assets/og-image.png'],
-  },
+  title: 'Solar Scaler',
+  description: 'From lead generation to closed job — one system, built exclusively for solar, managed end to end.',
 }
 
 export default function Page() {
   return (
-    <main style={{ minHeight: '100vh' }}>
-      <OSNavbar />
-      <OSHeroSection />
-      <OSProblemSection />
-      <OSFeaturesSection />
-      <OSCallSection />
-      <OSMarketplaceSection />
-      <OSCtaSection />
-      <OSFooter />
+    <main className="min-h-screen">
+      <HeroSection />
+      <div className="bg-white">
+        <ProcessHeader />
+        <Section02 />
+        <Section03 />
+        <Section01 />
+        <EarlyAccessBanner />
+        <Footer />
+      </div>
     </main>
   )
 }

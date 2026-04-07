@@ -163,8 +163,6 @@ export default function HeroSection() {
           >
             SOLAR SCALER
           </span>
-          <span style={{ fontWeight: 400, opacity: 0.6, color: 'white', fontSize: 'clamp(12px, 1.4vw, 17px)' }}>by</span>
-          <Image src="/nova-logo-white.png" alt="NOVA" width={72} height={24} className="h-5 md:h-6 w-auto object-contain" />
         </div>
       </div>
 

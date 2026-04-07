@@ -16,7 +16,7 @@ const rawLeads = [
   { name: 'David P.',   time: '32 min ago', src: 'Google' },
   { name: 'Emma W.',    time: '1h ago',     src: 'Door knock' },
   { name: 'Marcus B.',  time: '1h ago',     src: 'Referral' },
-  { name: 'Claire H.',  time: '2h ago',     src: 'NOVA' },
+  { name: 'Claire H.',  time: '2h ago',     src: 'Marketplace' },
   { name: 'Tom R.',     time: '2h ago',     src: 'Meta' },
   { name: 'Priya K.',   time: '3h ago',     src: 'Google' },
   { name: 'Lee S.',     time: '4h ago',     src: 'Door knock' },
@@ -127,11 +127,11 @@ export default function Section03() {
 
           <div className="flex justify-center w-full py-3"><ArrowDown /></div>
 
-          {/* NOVA AI — mobile */}
-          <span style={{ ...labelStyle, marginBottom: 8 }}>NOVA AI</span>
+          {/* AI scoring — mobile */}
+          <span style={{ ...labelStyle, marginBottom: 8 }}>AI Scoring</span>
           <div style={{ background: '#fff', border: '1.5px solid rgba(74,189,232,0.35)', borderRadius: 12, padding: '14px 16px', boxShadow: '0 2px 12px rgba(74,189,232,0.1)', width: '100%', display: 'flex', alignItems: 'center', gap: 16 }}>
             <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'linear-gradient(135deg, #0c1d2e 0%, #0f2640 100%)', border: '1.5px solid rgba(74,189,232,0.5)', boxShadow: '0 4px 16px rgba(74,189,232,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <Image src="/nova-logo-white.png" alt="NOVA" width={30} height={11} style={{ width: 30, height: 'auto', objectFit: 'contain' }} />
+              <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'white', fontSize: 7, letterSpacing: '0.04em' }}>SS</span>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px 12px' }}>
               {scoringFactors.map(f => (
@@ -215,12 +215,12 @@ export default function Section03() {
 
               <ArrowRight />
 
-              {/* Col 2: NOVA AI scoring */}
+              {/* Col 2: AI scoring */}
               <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
-                <span style={labelStyle}>NOVA AI</span>
+                <span style={labelStyle}>AI Scoring</span>
                 <div style={{ background: '#fff', border: '1.5px solid rgba(74,189,232,0.35)', borderRadius: 12, padding: '14px 16px', boxShadow: '0 2px 12px rgba(74,189,232,0.1)', width: 145, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'linear-gradient(135deg, #0c1d2e 0%, #0f2640 100%)', border: '1.5px solid rgba(74,189,232,0.5)', boxShadow: '0 4px 16px rgba(74,189,232,0.3), inset 0 1px 0 rgba(255,255,255,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Image src="/nova-logo-white.png" alt="NOVA" width={32} height={12} style={{ width: 32, height: 'auto', objectFit: 'contain' }} />
+                    <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'white', fontSize: 7, letterSpacing: '0.04em' }}>SS</span>
                   </div>
                   <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 5 }}>
                     {scoringFactors.map(f => (

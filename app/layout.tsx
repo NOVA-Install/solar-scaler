@@ -23,8 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NOVA - The AI-Native OS for Installers',
-  description: 'Your entire install operations. One platform. Built for home energy installers. AI runs your pipeline so you can focus on installs.',
+  title: 'Solar Scaler',
+  description: 'More installs. Less chasing. No long-term contracts.',
   icons: {
     icon: '/assets/favicon.jpg',
   },

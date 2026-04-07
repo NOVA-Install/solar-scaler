@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* === novainstall.com design tokens === */
+  /* === Design tokens === */
 
   /* Primary / Sky */
   --color-primary: #4ABDE8;
@@ -150,9 +150,9 @@
   }
 }
 
-/* ── novainstall.com base styles ─────────────────────────── */
+/* ── Base styles ─────────────────────────── */
 
-/* Monument Extended font for NOVA wordmark */
+/* Monument Extended font for wordmark */
 @font-face {
   font-family: 'Monument Extended';
   src: url('/fonts/MonumentExtended.otf') format('opentype');
@@ -162,7 +162,7 @@
 }
 
 /* Wordmark */
-.nova-wordmark {
+.ss-wordmark {
   font-family: 'Monument Extended', var(--font-mono), 'JetBrains Mono', monospace;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -241,12 +241,12 @@
 }
 @keyframes dash { to { stroke-dashoffset: -100; } }
 
-/* NOVA glow ring animation */
-@keyframes nova-glow {
+/* Glow ring animation */
+@keyframes glow {
   0%, 100% { box-shadow: 0 0 30px rgba(74,189,232,0.10), 0 0 60px rgba(74,189,232,0.04), inset 0 0 20px rgba(74,189,232,0.03); border-color: rgba(74,189,232,0.20); }
   50% { box-shadow: 0 0 50px rgba(74,189,232,0.18), 0 0 100px rgba(74,189,232,0.08), inset 0 0 40px rgba(74,189,232,0.06); border-color: rgba(74,189,232,0.35); }
 }
-@keyframes nova-glow-outer {
+@keyframes glow-outer {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.8; }
 }
@@ -289,7 +289,7 @@
   .os-prob-diagram { flex-direction: column !important; gap: 20px !important; }
   .os-prob-diagram .os-prob-arrow svg { transform: rotate(90deg); }
   .os-prob-after { flex: none !important; }
-  .os-nova-circle { width: 120px !important; height: 120px !important; }
+
   .os-prob-benefits { align-items: center !important; }
 
   /* Call section */
@@ -299,8 +299,7 @@
 
   /* Marketplace */
   .os-mkt-feed { min-height: 300px !important; padding: 32px 0 !important; }
-  .os-mkt-nova { width: 80px !important; height: 80px !important; }
-  .os-mkt-nova-text { font-size: 14px !important; }
+
 
   /* Hero */
   .os-hero { background: linear-gradient(180deg, #4ABDE8 0%, #5ec8f0 35%, #b8e2f5 65%, var(--bg) 90%) !important; }
