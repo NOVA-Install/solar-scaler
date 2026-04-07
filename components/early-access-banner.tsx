@@ -287,7 +287,6 @@ export default function EarlyAccessBanner() {
             <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(16px, 2vw, 22px)' }}>
               SOLAR SCALER
             </span>
-              <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(14px, 1.8vw, 20px)' }}>SOLAR SCALER</span>
           </div>
         </motion.div>
 

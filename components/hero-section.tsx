@@ -156,14 +156,9 @@ export default function HeroSection() {
     >
       {/* Wordmark */}
       <div className="w-full flex justify-center pt-5 md:pt-10 pb-0">
-        <div className="flex items-center gap-2.5">
-          <span
-            className="text-white font-black uppercase tracking-[0.12em] select-none"
-            style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(16px, 2vw, 24px)' }}
-          >
-            SOLAR SCALER
-          </span>
-        </div>
+        <span className="text-white font-black uppercase tracking-[0.12em] select-none" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(16px, 2vw, 24px)' }}>
+          SOLAR SCALER
+        </span>
       </div>
 
       {/* Centred content column */}
