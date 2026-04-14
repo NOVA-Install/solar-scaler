@@ -40,9 +40,8 @@ export default function Section01() {
         {/* Copy — full width top */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VP} className="mb-4">
           <p className="text-xs font-mono font-semibold tracking-[0.12em] uppercase text-[var(--sky-d)] mb-3">03</p>
-          <h2 className="text-[clamp(26px,3.5vw,44px)] leading-tight tracking-tight text-[var(--tx)] max-w-2xl">
-            <span className="font-bold">The whole thing runs itself.</span>
-            <span className="font-normal text-[var(--tx2)]"> One system, no chaos.</span>
+          <h2 className="text-[clamp(26px,3.5vw,44px)] leading-tight tracking-tight text-[var(--tx)]">
+            <span className="font-bold">We&apos;ve <span style={{ color: 'var(--sky)' }}>done installs</span>. This is what we wished we had.</span>
           </h2>
         </motion.div>
 
@@ -53,8 +52,8 @@ export default function Section01() {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="space-y-3 text-[var(--tx2)] text-base leading-relaxed max-w-2xl mb-10"
         >
-          <p className="text-[var(--tx2)]">Your leads are tracked. Your pipeline is moving. Your spend is working.</p>
-          <p className="text-[var(--tx2)]">You&apos;re not chasing. Your system is.</p>
+          <p className="text-[var(--tx2)]">Same spreadsheets. Same agencies. Same chaos you&apos;re dealing with now.</p>
+          <p className="text-[var(--tx2)]">So we built one system to replace all of it.</p>
         </motion.div>
 
         {/* Old Way → New Way visual */}

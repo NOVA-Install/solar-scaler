@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import ApplyForm from '@/components/apply-form'
+import Script from 'next/script'
 
 export const metadata = {
-  title: 'Apply — Solar Scaler',
-  description: 'Apply for one of 5 early access spots on the Solar Scaler program.',
+  title: 'Book a Call — Solar Scaler',
+  description: 'Book a free 15-minute call with the Solar Scaler team.',
 }
 
 export default function ApplyPage() {
@@ -26,17 +25,28 @@ export default function ApplyPage() {
             SOLAR SCALER
           </span>
         </div>
-        <div className="w-10" /> {/* spacer to keep wordmark centred */}
+        <div className="w-10" />
       </header>
 
-      {/* Form */}
-      <div className="flex-1 flex flex-col justify-center">
-        <ApplyForm />
+      {/* Cal.com inline embed */}
+      <div className="flex-1 w-full max-w-3xl mx-auto px-6 py-8">
+        <div id="my-cal-inline-15min" style={{ width: '100%', height: '100%', minHeight: '600px', overflow: 'scroll' }} />
       </div>
+
+      <Script id="cal-embed" strategy="afterInteractive">
+        {`(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "15min", {origin:"https://app.cal.com"});
+Cal.ns["15min"]("inline", {
+  elementOrSelector:"#my-cal-inline-15min",
+  config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+  calLink: "matt-ussher-vniceg/15min",
+});
+Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});`}
+      </Script>
 
       {/* Footer */}
       <footer className="border-t border-[var(--bd)] px-6 py-8 flex justify-center">
-        <p className="text-[var(--tx3)] text-xs">© {new Date().getFullYear()} Solar Scaler. All rights reserved.</p>
+        <p className="text-[var(--tx3)] text-xs">&copy; {new Date().getFullYear()} Solar Scaler. All rights reserved.</p>
       </footer>
 
     </main>

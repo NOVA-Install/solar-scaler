@@ -150,6 +150,16 @@
   }
 }
 
+/* ── Cal.com embed fix ──────────────────── */
+#my-cal-inline-15min iframe {
+  min-height: 700px !important;
+}
+@media (max-width: 768px) {
+  #my-cal-inline-15min iframe {
+    min-height: 900px !important;
+  }
+}
+
 /* ── Base styles ─────────────────────────── */
 
 /* Monument Extended font for wordmark */

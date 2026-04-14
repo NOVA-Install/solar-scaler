@@ -68,7 +68,7 @@ export default function Section02() {
         >
           <p className="text-xs font-mono font-semibold tracking-[0.12em] uppercase text-[var(--sky-d)] mb-3">01</p>
           <h2 className="text-[clamp(26px,3.5vw,44px)] leading-tight tracking-tight text-[var(--tx)]">
-            <span className="font-bold">First we fill your pipeline with high intent customers.</span>
+            <span className="font-bold">You get <span style={{ color: 'var(--sky)' }}>high-intent</span> customers.</span>
           </h2>
         </motion.div>
 

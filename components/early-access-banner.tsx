@@ -237,42 +237,22 @@ const mockupMap: Record<string, React.ReactNode> = {
   platform: <PlatformMockup />,
 }
 
-// Ordered: most dramatic value first
-const valueRows = [
+// Top 3 features for the grid
+const gridRows = [
   {
-    badge: 'Included for free',
-    worth: '£3,000/mo value',
     label: 'Lead generation, fully managed',
     sub: 'Digital marketing launched by us. You focus on installs.',
     mockup: 'ads',
   },
   {
-    badge: 'Included for free',
-    worth: '£2,400 value',
     label: 'Premium custom website, built for you',
     sub: 'Professionally built. Optimised for conversion and brand authority.',
     mockup: 'website',
   },
   {
-    badge: 'Included for free',
-    worth: '£500/mo value',
-    label: 'Full Solar Scaler platform',
-    sub: 'CRM, lead generation, customer communication.',
+    label: 'All-in-one CRM built for energy installers',
+    sub: '',
     mockup: 'platform',
-  },
-  {
-    badge: 'Included for free',
-    worth: 'Potential free installs',
-    label: 'Exclusive high-intent marketplace leads',
-    sub: "Early partners gain access to Solar Scaler's own high-intent solar leads.",
-    mockup: 'marketplace',
-  },
-  {
-    badge: 'Included for free',
-    worth: 'Priceless',
-    label: 'Direct access to our team',
-    sub: 'No ticket queues. You message us directly at any time.',
-    mockup: 'chat',
   },
 ]
 
@@ -292,61 +272,61 @@ export default function EarlyAccessBanner() {
 
         {/* Two-column offer */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] rounded-2xl overflow-hidden border border-[var(--bd)] shadow-xl">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_340px] rounded-2xl overflow-hidden border border-[var(--bd)] shadow-xl">
 
             {/* LEFT — value stack */}
-            <div className="bg-white px-6 md:px-8 py-7">
-              <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--sky-d)] mb-5">What&apos;s included</p>
+            <div className="bg-white px-5 md:px-7 py-6">
+              <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--sky-d)] mb-4">What&apos;s included</p>
 
-              <div className="space-y-0">
-                {valueRows.map((row, i) => (
-                  <div key={i} className={`flex items-start gap-4 py-4 ${i < valueRows.length - 1 ? 'border-b border-[var(--bd)]' : ''}`}>
-                    {/* Mockup — desktop only */}
-                    <div className="hidden md:block w-[148px] shrink-0">
-                      {mockupMap[row.mockup]}
-                    </div>
-                    {/* Label + sub + value pills */}
-                    <div className="flex-1 flex flex-col gap-1.5 justify-center min-w-0">
-                      <p className="text-[var(--tx)] font-semibold text-sm leading-snug">{row.label}</p>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-[10px] font-bold rounded-full px-3 py-1 whitespace-nowrap" style={{
-                          color: '#fff',
-                          background: row.badge === 'EXCLUSIVE' ? '#e8a020' : '#3ab870',
-                          letterSpacing: '0.04em',
-                        }}>
-                          {row.badge}
-                        </span>
-                        <span className="text-[10px] font-semibold rounded-full px-2.5 py-1 whitespace-nowrap" style={{ color: '#2a9bc8', background: 'rgba(74,189,232,0.1)', border: '1px solid rgba(74,189,232,0.25)' }}>
-                          {row.worth}
-                        </span>
-                      </div>
-                      <p className="text-[var(--tx3)] text-xs leading-relaxed">{row.sub}</p>
-                    </div>
+              {/* Feature checklist */}
+              <div className="space-y-3 mb-4">
+                {gridRows.map((row, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" className="shrink-0">
+                      <circle cx="8" cy="8" r="8" fill="#3ab870"/>
+                      <path d="M5 8l2.5 2.5L11 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <p className="text-[var(--tx)] font-semibold text-[15px] leading-snug">{row.label}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Total value — climactic moment */}
-              <div className="mt-5 rounded-xl bg-[var(--sf2)] border border-[var(--bd)] px-5 py-4 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--tx3)]">Total free value</span>
-                  <span className="text-[var(--tx)] font-bold text-base">£5,900</span>
+              {/* USP banner — direct access */}
+              <div className="rounded-xl p-4 md:p-5 flex items-center gap-4" style={{ background: 'linear-gradient(135deg, #0c1d2e 0%, #0f2640 100%)' }}>
+                <div className="hidden md:block w-[160px] shrink-0">
+                  <ChatMockup />
                 </div>
-                <span className="text-[var(--sky-d)] font-bold text-sm">Early partners only</span>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" className="shrink-0">
+                      <circle cx="8" cy="8" r="8" fill="#3ab870"/>
+                      <path d="M5 8l2.5 2.5L11 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <p className="text-white font-bold text-base md:text-lg leading-snug">Direct access to our team.</p>
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed ml-[30px]">No ticket queues. You message us directly. We respond instantly.</p>
+                </div>
               </div>
+
             </div>
 
             {/* RIGHT — close */}
-            <div id="apply" className="bg-[var(--sky)] px-7 py-10 flex flex-col items-stretch justify-center gap-6" style={{ scrollMarginTop: '60vh' }}>
-              <SpotsCounter remaining={total - taken} total={total} />
+            <div id="apply" className="bg-[var(--sky)] px-8 py-12 flex flex-col items-center justify-center gap-6 text-center" style={{ scrollMarginTop: '60vh' }}>
+              <div style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontWeight: 900, lineHeight: 1.15, color: 'white', letterSpacing: '-0.02em' }}>
+                Limited spots<br />remaining.
+              </div>
               <a
                 id="apply-btn"
-                href="/solar-scaler/apply"
-                className="flex items-center justify-center w-full bg-white text-[var(--sky-d)] font-black rounded-2xl hover:opacity-90 transition-opacity shadow-lg"
-                style={{ fontSize: 'clamp(22px, 3vw, 28px)', padding: '22px 32px' }}
+                href="/apply"
+                className="flex items-center justify-center gap-3 w-full bg-white rounded-full hover:opacity-90 transition-opacity shadow-lg"
+                style={{ padding: '18px 28px' }}
               >
-                Apply
+                <span className="font-bold text-[var(--tx)]" style={{ fontSize: 16 }}>Book a free call</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="#0f2337" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
+              <p className="text-white text-[13px] font-semibold">Takes 20s. Same-day availability.</p>
             </div>
 
           </div>

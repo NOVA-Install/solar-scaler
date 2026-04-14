@@ -75,7 +75,7 @@ export default function Section03() {
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VP} className="mb-6">
           <p className="text-xs font-mono font-semibold tracking-[0.12em] uppercase text-[var(--sky-d)] mb-3">02</p>
           <h2 className="text-[clamp(26px,3.5vw,44px)] leading-tight tracking-tight text-[var(--tx)]">
-            <span className="font-bold">Your team. Same headcount. <span style={{ color: 'var(--sky)' }}>3x</span> the output.</span>
+            <span className="font-bold">All-in-one CRM built for <span style={{ color: 'var(--sky)' }}>energy installers</span>.</span>
           </h2>
         </motion.div>
 

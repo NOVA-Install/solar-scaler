@@ -8,68 +8,15 @@ import ProofTicker from './proof-ticker'
  * until no line overflows its container. ResizeObserver re-runs on every
  * viewport/layout change so the headline can never word-wrap.
  */
-function useFitHeadline() {
-  const ref = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const h1 = ref.current
-    if (!h1) return
-
-    const fit = () => {
-      const lines = h1.querySelectorAll<HTMLElement>('[data-headline-line]')
-      let size = 54
-      h1.style.fontSize = size + 'px'
-      while (size > 10) {
-        const overflows = Array.from(lines).some(l => l.scrollWidth > l.clientWidth + 1)
-        if (!overflows) break
-        size -= 0.5
-        h1.style.fontSize = size + 'px'
-      }
-    }
-
-    fit()
-    const ro = new ResizeObserver(fit)
-    ro.observe(h1)
-    return () => ro.disconnect()
-  }, [])
-
-  return ref
-}
-
-function badgeColor(remaining: number, total: number): string {
-  const frac = remaining / total
-  if (frac > 0.7) return '#3ab870'
-  if (frac > 0.45) return '#e8a020'
-  return '#e01010'
-}
 
 function SpotsBadge() {
-  const TOTAL = 5, TARGET = 2
-  const [remaining, setRemaining] = useState(TOTAL)
-  const rafRef = useRef<number>(0)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const duration = 900
-      const t0 = performance.now()
-      const tick = (now: number) => {
-        const p = Math.min((now - t0) / duration, 1)
-        const eased = 1 - Math.pow(1 - p, 3)
-        setRemaining(Math.round(TOTAL - (TOTAL - TARGET) * eased))
-        if (p < 1) rafRef.current = requestAnimationFrame(tick)
-      }
-      rafRef.current = requestAnimationFrame(tick)
-    }, 800)
-    return () => { clearTimeout(timer); cancelAnimationFrame(rafRef.current) }
-  }, [])
-
   return (
     <div
       className="inline-flex items-center gap-2 px-5 py-2 rounded-sm text-white text-xs font-bold tracking-widest uppercase mb-6"
-      style={{ background: badgeColor(remaining, TOTAL) }}
+      style={{ background: '#3ab870' }}
     >
       <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
-      <span style={{ fontVariantNumeric: 'tabular-nums' }}>{remaining}/{TOTAL} Spots Remaining</span>
+      <span>Limited Spots Remaining</span>
     </div>
   )
 }
@@ -104,22 +51,20 @@ function useCountUp(target: number, duration = 3800, startFraction = 0.5) {
 
 function ProofStats() {
   const revenue = getLiveRevenue()
-  const revenueCount = useCountUp(revenue)
-  const installerCount = useCountUp(50, 2800, 0.15)
-  const formatted = '£' + (Math.round(revenueCount / 100) * 100).toLocaleString('en-GB') + '+'
+  const formatted = '£' + (Math.round(revenue / 100) * 100).toLocaleString('en-GB') + '+'
 
   return (
-    <div className="flex items-center justify-center gap-0 w-full">
-      <div className="flex flex-col items-center px-6 md:px-12" style={{ minWidth: 72 }}>
+    <div className="flex items-center justify-center gap-0 w-full" style={{ height: 'clamp(70px, 9vw, 90px)' }}>
+      <div className="flex flex-col items-center justify-center px-6 md:px-12 h-full" style={{ minWidth: 120 }}>
         <span className="text-white font-bold leading-none tracking-tight" style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontVariantNumeric: 'tabular-nums' }}>
-          {installerCount}+
+          50+
         </span>
         <span className="text-white/80 text-[13px] uppercase tracking-[0.08em] mt-2">
           <strong className="text-white font-bold">Partner</strong> installers
         </span>
       </div>
       <div className="w-px self-stretch bg-white/20" />
-      <div className="flex flex-col items-center px-6 md:px-12" style={{ minWidth: 160 }}>
+      <div className="flex flex-col items-center justify-center px-6 md:px-12 h-full" style={{ minWidth: 280 }}>
         <span className="text-white font-bold leading-none tracking-tight" style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontVariantNumeric: 'tabular-nums' }}>
           {formatted}
         </span>
@@ -132,7 +77,6 @@ function ProofStats() {
 }
 
 export default function HeroSection() {
-  const h1Ref = useFitHeadline()
 
   return (
     <section
@@ -157,14 +101,13 @@ export default function HeroSection() {
         {/* Headline — each line has white-space:nowrap; useFitHeadline shrinks
             font-size until neither line overflows, so wrapping is impossible. */}
         <h1
-          ref={h1Ref}
           className="font-sans font-[700] leading-[1.1] tracking-[-0.03em] text-white mb-7 w-full"
-          style={{ fontSize: 54 }}
+          style={{ fontSize: 'clamp(28px, 7vw, 54px)' }}
         >
-          <span data-headline-line className="block whitespace-nowrap text-white">
+          <span className="block whitespace-nowrap text-white">
             More installs. Less chasing.
           </span>
-          <span data-headline-line className="block whitespace-nowrap text-white/70">
+          <span className="block whitespace-nowrap text-white/70">
             No long-term contracts.
           </span>
         </h1>
@@ -177,15 +120,19 @@ export default function HeroSection() {
 
         {/* CTA */}
         <a
-          href="/solar-scaler/apply"
-          className="inline-flex items-center gap-3 tracking-wide px-5 md:px-10 py-[20px] rounded-full hover:opacity-90 transition-opacity shadow-lg w-full justify-center mb-5"
-          style={{ background: '#ffffff', color: '#0f2337', fontWeight: 700, fontSize: 'clamp(16px, 1.2vw, 17px)' }}
+          href="/apply"
+          className="flex flex-col items-center tracking-wide px-5 md:px-10 py-[18px] rounded-full hover:opacity-90 transition-opacity shadow-lg w-full"
+          style={{ background: '#ffffff', color: '#0f2337' }}
         >
-          Apply for our SOLAR SCALER program
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="#0f2337" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <span className="flex items-center gap-3 font-bold" style={{ fontSize: 'clamp(16px, 1.2vw, 17px)' }}>
+            Book a free call
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="#0f2337" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <span className="text-[13px] text-[#0f2337]/60 font-semibold mt-1">Takes 20s. Same-day availability.</span>
         </a>
+        <div className="h-4" />
 
         {/* Trust line */}
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
