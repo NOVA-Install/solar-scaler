@@ -1,9 +1,22 @@
 'use client'
 
+import { useEffect } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void
+  }
+}
 
 export default function ApplyForm() {
   const [state, handleSubmit] = useForm('mlgopnvl')
+
+  useEffect(() => {
+    if (state.succeeded && window.fbq) {
+      window.fbq('track', 'Lead')
+    }
+  }, [state.succeeded])
 
   if (state.succeeded) {
     return (
