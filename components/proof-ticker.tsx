@@ -17,7 +17,7 @@ const logos = [
   { src: '/logos/simmer.png', alt: 'Simmer' },
 ]
 
-const PX_PER_SECOND = 80
+const PX_PER_SECOND = 64
 
 export default function ProofTicker() {
   const trackRef = useRef<HTMLDivElement>(null)
@@ -29,11 +29,10 @@ export default function ProofTicker() {
     const firstSet = firstSetRef.current
     if (!track || !firstSet) return
 
-    const start = () => {
+    const startAnimation = () => {
       const w = firstSet.offsetWidth
       if (w === 0) return
 
-      // Cancel any existing animation
       animRef.current?.cancel()
 
       animRef.current = track.animate(
@@ -42,15 +41,52 @@ export default function ProofTicker() {
       )
     }
 
-    // Measure after paint and after images settle
-    const t1 = setTimeout(start, 50)
-    const t2 = setTimeout(start, 600)
-    window.addEventListener('resize', start)
+    // Wait for images to load, then wait for the startDelay
+    const images = firstSet.querySelectorAll('img')
+    let loaded = 0
+    const total = images.length
+    let imagesReady = false
+
+    const onAllImagesReady = () => {
+      if (imagesReady) return
+      imagesReady = true
+      startAnimation()
+    }
+
+    if (total === 0) {
+      onAllImagesReady()
+    } else {
+      const onImageReady = () => {
+        loaded++
+        if (loaded >= total) onAllImagesReady()
+      }
+
+      images.forEach((img) => {
+        if (img.complete) {
+          onImageReady()
+        } else {
+          img.addEventListener('load', onImageReady, { once: true })
+          img.addEventListener('error', onImageReady, { once: true })
+        }
+      })
+
+      // Fallback if image events don't fire
+      const fallback = setTimeout(onAllImagesReady, 3000)
+
+      window.addEventListener('resize', startAnimation)
+
+      return () => {
+        clearTimeout(fallback)
+        window.removeEventListener('resize', startAnimation)
+        animRef.current?.cancel()
+      }
+    }
+
+    window.addEventListener('resize', startAnimation)
 
     return () => {
-      clearTimeout(t1)
-      clearTimeout(t2)
-      window.removeEventListener('resize', start)
+      clearTimeout(delayTimer)
+      window.removeEventListener('resize', startAnimation)
       animRef.current?.cancel()
     }
   }, [])
@@ -65,14 +101,14 @@ export default function ProofTicker() {
           <div ref={firstSetRef} className="flex items-center shrink-0">
             {logos.map((logo) => (
               <div key={logo.alt} className="inline-flex items-center justify-center mx-6 md:mx-10 shrink-0 h-10">
-                <Image src={logo.src} alt={logo.alt} width={100} height={32} className="h-10 w-auto object-contain" />
+                <Image src={logo.src} alt={logo.alt} width={100} height={32} loading="eager" className="h-10 w-auto object-contain" />
               </div>
             ))}
           </div>
           <div className="flex items-center shrink-0" aria-hidden>
             {logos.map((logo) => (
               <div key={logo.alt} className="inline-flex items-center justify-center mx-6 md:mx-10 shrink-0 h-10">
-                <Image src={logo.src} alt={logo.alt} width={100} height={32} className="h-10 w-auto object-contain" />
+                <Image src={logo.src} alt={logo.alt} width={100} height={32} loading="eager" className="h-10 w-auto object-contain" />
               </div>
             ))}
           </div>
