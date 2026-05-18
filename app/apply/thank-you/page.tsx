@@ -4,9 +4,10 @@ import { useEffect } from 'react'
 
 export default function ThankYouPage() {
   useEffect(() => {
-    // Fire Meta Lead event
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead')
+    // Fire Meta Lead + GA4 conversion events
+    if (typeof window !== 'undefined') {
+      if ((window as any).fbq) (window as any).fbq('track', 'Lead')
+      if ((window as any).gtag) (window as any).gtag('event', 'generate_lead')
     }
   }, [])
 

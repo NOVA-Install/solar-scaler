@@ -6,6 +6,7 @@ import { useForm } from '@formspree/react'
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void
+    gtag?: (...args: unknown[]) => void
   }
 }
 
@@ -85,8 +86,9 @@ export default function ApplyForm() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (formspreeState.succeeded && window.fbq) {
-      window.fbq('track', 'Lead')
+    if (formspreeState.succeeded) {
+      if (window.fbq) window.fbq('track', 'Lead')
+      if (window.gtag) window.gtag('event', 'generate_lead')
     }
   }, [formspreeState.succeeded])
 
