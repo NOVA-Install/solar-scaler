@@ -30,29 +30,6 @@ export default function NewOfferPage() {
             <span className="block whitespace-nowrap">Without the Spend, Setup, or Sales Team</span>
           </h1>
 
-          {/* Hero CTA */}
-          <a
-            href="#pricing"
-            className="inline-flex items-center gap-2 mb-8 whitespace-nowrap"
-            style={{
-              border: '2px solid rgba(255,255,255,0.6)',
-              color: '#fff',
-              padding: '12px 28px',
-              borderRadius: 100,
-              fontSize: '15px',
-              fontWeight: 600,
-              textDecoration: 'none',
-              transition: 'all 0.3s',
-              backdropFilter: 'blur(4px)',
-              background: 'rgba(255,255,255,0.1)',
-            }}
-          >
-            See our transparent pricing
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
-              <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-
           {/* Video placeholder with badge */}
           <div className="relative w-full max-w-2xl mb-4">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
@@ -83,6 +60,28 @@ export default function NewOfferPage() {
               </div>
             </div>
           </div>
+
+          {/* Pricing CTA */}
+          <a
+            href="#pricing"
+            className="inline-flex items-center gap-2 mt-4 mb-4 whitespace-nowrap"
+            style={{
+              background: '#ffffff',
+              color: 'var(--sky-d)',
+              padding: '12px 28px',
+              borderRadius: 100,
+              fontSize: '15px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              transition: 'all 0.3s',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+            }}
+          >
+            See our transparent pricing
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
+              <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
 
         </div>
 
