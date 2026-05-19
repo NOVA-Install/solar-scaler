@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
 
 const logos = [
   { src: '/logos/locogen.png', alt: 'Locogen' },
@@ -13,98 +12,57 @@ const logos = [
   { src: '/logos/expressvpn.png', alt: 'ExpressVPN' },
 ]
 
-const PX_PER_SECOND = 24
+// Number of times to duplicate the logo set — 4 copies guarantees
+// the track is always wider than 2× viewport, so no gap ever appears.
+const COPIES = 4
+const DURATION = '30s'
 
-// Split logos into two rows for mobile
-const row1Logos = logos.slice(0, 5)
-const row2Logos = logos.slice(5)
+function LogoSet({ items }: { items: typeof logos }) {
+  return (
+    <div className="flex items-center shrink-0">
+      {items.map((logo) => (
+        <div key={logo.alt} className="inline-flex items-center justify-center px-5 md:px-10 shrink-0 h-8 md:h-10">
+          <Image src={logo.src} alt={logo.alt} width={100} height={32} loading="eager" className="h-8 md:h-10 w-auto object-contain" />
+        </div>
+      ))}
+    </div>
+  )
+}
 
 function TickerRow({ items, reverse = false }: { items: typeof logos; reverse?: boolean }) {
-  const trackRef = useRef<HTMLDivElement>(null)
-  const setRef = useRef<HTMLDivElement>(null)
-  const animRef = useRef<Animation | null>(null)
-
-  useEffect(() => {
-    const track = trackRef.current
-    const firstSet = setRef.current
-    if (!track || !firstSet) return
-
-    let fallbackTimer: ReturnType<typeof setTimeout>
-
-    const startAnimation = () => {
-      const w = firstSet.offsetWidth
-      if (w === 0) return
-
-      animRef.current?.cancel()
-
-      const from = reverse ? `-${w}px` : '0px'
-      const to = reverse ? '0px' : `-${w}px`
-
-      animRef.current = track.animate(
-        [{ transform: `translateX(${from})` }, { transform: `translateX(${to})` }],
-        { duration: (w / PX_PER_SECOND) * 1000, iterations: Infinity, easing: 'linear' }
-      )
-    }
-
-    const images = firstSet.querySelectorAll('img')
-    let loaded = 0
-    const total = images.length
-    let ready = false
-
-    const onReady = () => {
-      if (ready) return
-      ready = true
-      startAnimation()
-    }
-
-    if (total === 0) {
-      onReady()
-    } else {
-      const onLoad = () => { loaded++; if (loaded >= total) onReady() }
-      images.forEach((img) => {
-        if (img.complete) onLoad()
-        else {
-          img.addEventListener('load', onLoad, { once: true })
-          img.addEventListener('error', onLoad, { once: true })
-        }
-      })
-      fallbackTimer = setTimeout(onReady, 3000)
-    }
-
-    window.addEventListener('resize', startAnimation)
-    return () => {
-      clearTimeout(fallbackTimer)
-      window.removeEventListener('resize', startAnimation)
-      animRef.current?.cancel()
-    }
-  }, [reverse])
-
   return (
     <div className="overflow-hidden">
-      <div ref={trackRef} className="flex items-center whitespace-nowrap" style={{ willChange: 'transform' }}>
-        <div ref={setRef} className="flex items-center shrink-0">
-          {items.map((logo) => (
-            <div key={logo.alt} className="inline-flex items-center justify-center mx-5 md:mx-10 shrink-0 h-8 md:h-10">
-              <Image src={logo.src} alt={logo.alt} width={100} height={32} loading="eager" className="h-8 md:h-10 w-auto object-contain" />
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center shrink-0" aria-hidden>
-          {items.map((logo) => (
-            <div key={logo.alt} className="inline-flex items-center justify-center mx-5 md:mx-10 shrink-0 h-8 md:h-10">
-              <Image src={logo.src} alt={logo.alt} width={100} height={32} loading="eager" className="h-8 md:h-10 w-auto object-contain" />
-            </div>
-          ))}
-        </div>
+      <div
+        className="flex items-center"
+        style={{
+          width: 'max-content',
+          animation: `ticker-scroll ${DURATION} linear infinite`,
+          animationDirection: reverse ? 'reverse' : 'normal',
+        }}
+      >
+        {Array.from({ length: COPIES }).map((_, i) => (
+          <LogoSet key={i} items={items} />
+        ))}
       </div>
     </div>
   )
 }
 
+// Split logos into two rows for mobile
+const row1Logos = logos.slice(0, 4)
+const row2Logos = logos.slice(4)
+
 export default function ProofTicker() {
   return (
     <div className="w-full bg-transparent">
-      <p className="text-center text-[11px] md:text-[12px] font-semibold uppercase tracking-widest text-[#0f1d2a]/50 pt-6 pb-3 md:pb-4">
+      <style>{`
+        @keyframes ticker-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% / ${COPIES})); }
+        }
+      `}</style>
+
+      <p className="text-center text-[15px] md:text-[12px] font-semibold uppercase tracking-widest text-[#0f1d2a]/50 pt-6 pb-3 md:pb-4">
         Built by experts from:
       </p>
 

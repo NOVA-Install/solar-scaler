@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import ProofTicker from './proof-ticker'
 
 export default function NewOfferPage() {
@@ -12,49 +13,59 @@ export default function NewOfferPage() {
         }}
       >
         {/* Wordmark */}
-        <div className="w-full flex justify-center pt-5 md:pt-10 pb-0">
-          <span className="text-white font-black uppercase tracking-[0.12em] select-none" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(16px, 2vw, 24px)' }}>
+        <div className="w-full flex flex-col items-center pt-6 md:pt-12 pb-0 gap-2">
+          <Image src="/logo.png" alt="Solar Scaler" width={80} height={80} className="rounded-full" style={{ border: '2.5px solid rgba(255,255,255,0.85)', boxShadow: '0 2px 10px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.15)' }} />
+          <span className="text-white font-black uppercase tracking-[0.05em] select-none" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(18px, 2.2vw, 28px)' }}>
             SOLAR SCALER
           </span>
         </div>
 
         {/* Centred content column */}
-        <div className="w-full px-6 pt-6 md:pt-10 pb-4 flex flex-col items-center text-center">
+        <div className="w-full px-6 pt-8 md:pt-12 pb-6 flex flex-col items-center text-center">
 
-          {/* Headline */}
-          <h1
-            className="font-sans font-[700] leading-[1.08] tracking-[-0.03em] text-white mb-6"
-            style={{ fontSize: 'clamp(22px, 4.5vw, 44px)' }}
-          >
-            <span className="block whitespace-nowrap">Guaranteed Solar Appointments</span>
-            <span className="block whitespace-nowrap">Without the Spend, Setup, or Sales Team</span>
-          </h1>
+          {/* Headline + guarantee */}
+          <div className="flex flex-col items-center mb-14 w-full">
+            <h1
+              className="font-sans font-[700] leading-[1.1] tracking-[-0.03em] text-white w-full text-center overflow-hidden"
+              style={{ fontSize: 'clamp(24px, 5.8vw, 56px)' }}
+            >
+              <span className="block">Stop Chasing Solar Leads</span>
+              <span className="block">We Deliver Ready Appointments</span>
+            </h1>
+
+            <p
+              className="font-sans font-[700] tracking-[-0.03em] text-white w-full text-center"
+              style={{ fontSize: 'clamp(24px, 5.8vw, 56px)', lineHeight: '1.1', textDecoration: 'underline', textUnderlineOffset: '6px', textDecorationThickness: '3px' }}
+            >
+              Qualified &amp; Guaranteed
+            </p>
+          </div>
 
           {/* Video placeholder with badge */}
-          <div className="relative w-full max-w-2xl mb-4">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+          <div className="relative w-full max-w-3xl mb-6">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-10">
               <div
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-sm text-white text-xs font-bold tracking-widest uppercase shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm text-white text-sm font-bold tracking-widest uppercase shadow-lg"
                 style={{ background: '#3ab870' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-white/70 animate-pulse" />
                 <span>Limited Spots for {new Date().toLocaleString('en-GB', { month: 'long' })}</span>
               </div>
             </div>
 
             <div
-              className="w-full aspect-video rounded-xl flex items-center justify-center overflow-hidden"
+              className="w-full aspect-video rounded-2xl flex items-center justify-center overflow-hidden"
               style={{
                 background: 'rgba(15,29,42,0.85)',
                 border: '1px solid rgba(255,255,255,0.15)',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.2)',
+                boxShadow: '0 24px 70px rgba(0,0,0,0.2)',
               }}
             >
               <div
-                className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
                 style={{ background: 'rgba(255,255,255,0.12)', border: '2px solid rgba(255,255,255,0.3)' }}
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" className="ml-1">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="white" className="ml-1">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
@@ -64,13 +75,13 @@ export default function NewOfferPage() {
           {/* Pricing CTA */}
           <a
             href="#pricing"
-            className="inline-flex items-center gap-2 mt-4 mb-4 whitespace-nowrap"
+            className="inline-flex items-center gap-2.5 mt-4 mb-4 whitespace-nowrap"
             style={{
               background: '#ffffff',
               color: 'var(--sky-d)',
-              padding: '12px 28px',
+              padding: '16px 36px',
               borderRadius: 100,
-              fontSize: '15px',
+              fontSize: '17px',
               fontWeight: 600,
               textDecoration: 'none',
               transition: 'all 0.3s',
@@ -78,7 +89,7 @@ export default function NewOfferPage() {
             }}
           >
             See our transparent pricing
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" className="shrink-0">
               <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
@@ -100,163 +111,156 @@ export default function NewOfferPage() {
             <h2 className="st">Simple, transparent <span className="ac">pricing</span></h2>
           </div>
 
-          {/* Guarantee badges */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-            {[
-              { text: 'Guaranteed £300 per appointment' },
-              { text: 'Guaranteed free replacement on no-shows' },
-              { text: 'Guaranteed no lock-in. Cancel anytime.' },
-            ].map((g) => (
-              <div
-                key={g.text}
-                className="flex items-center gap-3 p-4 rounded-lg"
-                style={{ background: 'var(--sky-g)', border: '1px solid rgba(74,189,232,0.15)' }}
-              >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
-                  <rect width="20" height="20" rx="4" fill="var(--grn)" />
-                  <path d="M6 10l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="text-[14px] font-semibold leading-snug" style={{ color: 'var(--tx)' }}>{g.text}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Pricing cards — differences only */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Pricing cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
             {([
               {
                 name: 'Starter',
                 price: '£3,000',
                 appointments: 10,
+                popular: false,
+                hasWebsite: false,
                 ownLeads: 50,
-                comms: '600 SMS · 3,000 call minutes',
+                sms: '600',
+                callMins: '3,000',
                 nova: { plan: 'Starter', worth: '£499/mo' },
-                extras: [] as string[],
               },
               {
                 name: 'Growth',
                 price: '£6,000',
                 appointments: 20,
+                popular: true,
+                hasWebsite: true,
                 ownLeads: 100,
-                comms: '1,200 SMS · 6,000 call minutes',
+                sms: '1,200',
+                callMins: '6,000',
                 nova: { plan: 'Growth', worth: '£899/mo' },
-                extras: ['Custom branded website'],
               },
               {
                 name: 'Pro',
                 price: '£12,000',
                 appointments: 40,
+                popular: false,
+                hasWebsite: true,
                 ownLeads: 200,
-                comms: '2,400 SMS · 12,000 call minutes',
+                sms: '2,400',
+                callMins: '12,000',
                 nova: { plan: 'Pro', worth: '£1,799/mo' },
-                extras: ['Custom branded website'],
               },
-            ] as const).map((tier) => {
-              const color = ({ Starter: 'var(--tx)', Growth: 'var(--sky)', Pro: 'var(--grn)' } as Record<string, string>)[tier.name] || 'var(--sky)'
-              return (
-                <div
-                  key={tier.name}
-                  className="rounded-xl overflow-hidden flex flex-col"
-                  style={{ background: '#fff', border: '1.5px solid var(--bd)', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}
-                >
-                  {/* Tier strip */}
-                  <div className="px-6 py-4" style={{ background: color }}>
-                    <p className="text-[13px] font-bold uppercase tracking-[0.1em] text-white" style={{ fontFamily: 'var(--font-mono)' }}>
-                      {tier.name}
-                    </p>
+            ] as const).map((tier) => (
+              <div
+                key={tier.name}
+                className="rounded-xl flex flex-col relative"
+                style={{
+                  background: '#fff',
+                  border: tier.popular ? '2px solid var(--sky)' : '1.5px solid var(--bd)',
+                  boxShadow: tier.popular ? '0 8px 30px rgba(74,189,232,0.15)' : '0 2px 12px rgba(0,0,0,0.04)',
+                }}
+              >
+                {/* Popular badge */}
+                {tier.popular && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+                    <span
+                      className="text-[11px] font-bold uppercase tracking-widest text-white px-4 py-1.5 rounded-full"
+                      style={{ background: 'var(--sky)', fontFamily: 'var(--font-mono)' }}
+                    >
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+
+                <div className="px-6 pt-6 pb-6 flex flex-col flex-1">
+                  {/* Tier name */}
+                  <p className="text-[13px] font-bold uppercase tracking-[0.1em] mb-4" style={{ fontFamily: 'var(--font-mono)', color: 'var(--tx3)' }}>
+                    {tier.name}
+                  </p>
+
+                  {/* Price — hero */}
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="font-[700] tracking-tight" style={{ fontSize: 'clamp(36px, 4vw, 48px)', color: 'var(--tx)' }}>
+                      {tier.price}
+                    </span>
+                    <span className="text-[14px] font-medium" style={{ color: 'var(--tx3)' }}>/ month</span>
                   </div>
 
-                  <div className="px-6 pt-5 pb-6 flex flex-col flex-1">
-                    {/* Price */}
-                    <div className="flex items-baseline gap-2 mb-5">
-                      <span className="font-[700] tracking-tight" style={{ fontSize: 'clamp(32px, 4vw, 42px)', color: 'var(--tx)' }}>
-                        {tier.price}
-                      </span>
-                      <span className="text-[14px] font-medium" style={{ color: 'var(--tx3)' }}>per month</span>
+                  {/* Appointments */}
+                  <div className="flex items-baseline gap-2 mb-5">
+                    <span className="text-[28px] font-[700] tracking-tight" style={{ color: 'var(--sky-d)', fontFeatureSettings: '"tnum"' }}>
+                      {tier.appointments}
+                    </span>
+                    <span className="text-[14px] font-medium" style={{ color: 'var(--tx2)' }}>
+                      appointments / month
+                    </span>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-full h-px mb-4" style={{ background: 'var(--bd)' }} />
+
+                  {/* Bonuses */}
+                  <p className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--grn)', fontFamily: 'var(--font-mono)' }}>Bonuses</p>
+                  <div className="flex flex-col gap-4">
+                    {/* NOVA CRM with nested sub-features */}
+                    <div className="flex flex-col gap-2.5">
+                      <div className="flex items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+                          <rect width="20" height="20" rx="4" fill="var(--grn)" />
+                          <path d="M6 10l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span className="text-[15px] font-semibold leading-normal" style={{ color: 'var(--tx)' }}>
+                          NOVA {tier.nova.plan} CRM
+                          <span className="font-normal ml-1" style={{ color: 'var(--tx2)' }}>(worth {tier.nova.worth})</span>
+                        </span>
+                      </div>
+                      {/* CRM sub-features — indented */}
+                      <div className="flex flex-col gap-2 ml-[32px]">
+                        <span className="text-[14px] leading-normal" style={{ color: 'var(--tx2)' }}>
+                          Up to {tier.ownLeads} of your own leads/mo
+                        </span>
+                        <span className="text-[14px] leading-normal" style={{ color: 'var(--tx2)' }}>
+                          {tier.sms} SMS · {tier.callMins} call minutes
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Cost per appointment */}
-                    <p className="text-[13px] font-medium mb-5" style={{ color: 'var(--tx3)', marginTop: -12 }}>
-                      £{(parseInt(tier.price.replace(/[£,]/g, '')) / tier.appointments).toFixed(0)} per appointment
-                    </p>
-
-                    {/* Appointment count — the hero number */}
-                    <div className="flex items-baseline gap-2 mb-4">
-                      <span className="text-[32px] font-[700] tracking-tight" style={{ color: 'var(--sky-d)', fontFeatureSettings: '"tnum"' }}>
-                        {tier.appointments}
-                      </span>
-                      <span className="text-[14px] font-medium" style={{ color: 'var(--tx2)' }}>
-                        appointments per month
-                      </span>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="w-full h-px mb-4" style={{ background: 'var(--bd)' }} />
-
-                    {/* Extras (Growth/Pro only) */}
-                    {tier.extras && tier.extras.length > 0 && (
-                      <div className="flex flex-col gap-2.5 mb-4">
-                        {tier.extras.map((e) => <DiffLine key={e} label={e} />)}
+                    {/* Website (Growth/Pro) */}
+                    {tier.hasWebsite && (
+                      <div className="flex items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+                          <rect width="20" height="20" rx="4" fill="var(--grn)" />
+                          <path d="M6 10l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span className="text-[15px] font-semibold leading-normal" style={{ color: 'var(--tx)' }}>
+                          Custom branded website
+                          <span className="font-normal ml-1" style={{ color: 'var(--tx2)' }}>(worth £1,099)</span>
+                        </span>
                       </div>
                     )}
-
-                    {/* NOVA callout — includes leads + comms */}
-                    <div
-                      className="p-4 rounded-lg mt-auto"
-                      style={{ background: 'var(--sky-g)', border: '1px solid rgba(74,189,232,0.15)' }}
-                    >
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-                          <rect width="18" height="18" rx="4" fill="var(--grn)" />
-                          <path d="M5 9l2.5 2.5L13 6.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        <span className="text-[14px] font-semibold" style={{ color: 'var(--tx)' }}>
-                          NOVA {tier.nova.plan} CRM
-                        </span>
-                      </div>
-                      <div className="flex flex-col gap-2 text-[13px]" style={{ color: 'var(--tx2)' }}>
-                        <div className="flex items-center gap-2">
-                          <span>Up to</span>
-                          <span className="font-semibold" style={{ color: 'var(--sky-d)', fontFeatureSettings: '"tnum"' }}>{tier.ownLeads}</span>
-                          <span>leads per month</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold" style={{ color: 'var(--sky-d)', fontFeatureSettings: '"tnum"' }}>{tier.comms.split(' · ')[0].split(' ')[0]}</span>
-                          <span>SMS</span>
-                          <span style={{ color: 'var(--tx3)' }}>·</span>
-                          <span className="font-semibold" style={{ color: 'var(--sky-d)', fontFeatureSettings: '"tnum"' }}>{tier.comms.split(' · ')[1].split(' ')[0]}</span>
-                          <span>call minutes</span>
-                        </div>
-                      </div>
-                      <div className="mt-3 pt-3" style={{ borderTop: '1px solid rgba(74,189,232,0.15)' }}>
-                        <span className="text-[16px] font-bold" style={{ color: 'var(--tx)' }}>
-                          Worth {tier.nova.worth}
-                        </span>
-                        <span className="text-[15px] font-bold uppercase ml-2" style={{ color: 'var(--grn)' }}>
-                          Free
-                        </span>
-                      </div>
-                    </div>
                   </div>
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
 
-          {/* Surveyors note */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            <span
-              className="shrink-0 w-[18px] h-[18px] rounded-full flex items-center justify-center"
-              style={{ background: 'var(--sky-g)', border: '1.5px solid var(--sky)' }}
-            >
-              <span className="w-2 h-2 rounded-full" style={{ background: 'var(--sky)' }} />
-            </span>
-            <span className="text-[14px] font-medium" style={{ color: 'var(--tx2)' }}>In-house surveyors available across all plans</span>
+          {/* Guarantee strip — below cards */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-10">
+            {[
+              'Guaranteed appointment volume',
+              'Guaranteed qualified, exclusive leads',
+              'Month-to-month. Cancel anytime.',
+            ].map((g) => (
+              <div key={g} className="flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
+                  <rect width="16" height="16" rx="3" fill="var(--grn)" />
+                  <path d="M4.5 8l2 2L11.5 6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-[13px] font-medium" style={{ color: 'var(--tx2)' }}>{g}</span>
+              </div>
+            ))}
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col items-center mt-8">
-            <a href="/apply" className="btn-sky text-center" style={{ fontSize: '17px', padding: '16px 40px' }}>
+          <div className="flex flex-col items-center mt-10">
+            <a href="/apply" className="btn-sky text-center" style={{ fontSize: '18px', padding: '18px 48px' }}>
               Book a Free Call
             </a>
           </div>
@@ -268,7 +272,7 @@ export default function NewOfferPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="st">Included in <span className="ac">every</span> plan</h2>
-            <p className="ssub mt-2">Every plan includes NOVA, our purpose-built solar CRM. <strong>An exclusive partnership at no extra cost.</strong></p>
+            <p className="ssub mt-2">Every plan includes NOVA, our purpose-built solar CRM. <strong>Included at no extra cost.</strong></p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0" style={{ borderTop: '1px solid var(--bd)' }}>
@@ -306,7 +310,7 @@ export default function NewOfferPage() {
           <div className="flex flex-col gap-3 mt-8 text-left max-w-lg mx-auto">
             {[
               'You want more appointments without buying shared leads',
-              'You don\'t want to manage a marketing agency',
+              'You don\'t want to pay marketing agency retainers',
               'You want to stop qualifying every single enquiry yourself',
               'You want one system instead of five tools duct-taped together',
             ].map((point) => (
@@ -325,13 +329,13 @@ export default function NewOfferPage() {
       {/* End CTA */}
       <section className="px-6 py-16 md:py-24" style={{ background: 'var(--sky)', color: '#fff' }}>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-bold leading-tight tracking-tight text-white mb-4" style={{ fontSize: 'clamp(26px, 4vw, 42px)' }}>
+          <h2 className="font-bold leading-tight tracking-tight text-white mb-5" style={{ fontSize: 'clamp(28px, 4.5vw, 48px)' }}>
             Ready to stop chasing leads?
           </h2>
-          <p className="text-white/80 text-[17px] mb-8">
+          <p className="text-white/80 text-[18px] mb-10">
             Book a free call. No commitment. We&apos;ll show you exactly how it works.
           </p>
-          <a href="/apply" className="btn-white text-center" style={{ fontSize: '17px', padding: '16px 40px' }}>
+          <a href="/apply" className="btn-white text-center" style={{ fontSize: '18px', padding: '18px 48px' }}>
             Book a Free Call
           </a>
         </div>
