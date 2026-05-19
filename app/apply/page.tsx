@@ -1,4 +1,5 @@
 import ApplyCallbackForm from '@/components/apply-callback-form'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Book a Call — Solar Scaler',
@@ -17,12 +18,15 @@ export default function ApplyPage() {
           </svg>
           Back
         </a>
-        <span
-          className="font-black uppercase tracking-[0.12em] select-none text-[var(--tx)]"
-          style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(13px, 2vw, 20px)' }}
-        >
-          SOLAR SCALER
-        </span>
+        <div className="flex items-center gap-2">
+          <Image src="/logo.png" alt="Solar Scaler" width={32} height={32} className="rounded-full" />
+          <span
+            className="font-black uppercase tracking-[0.12em] select-none text-[var(--tx)]"
+            style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(13px, 2vw, 20px)' }}
+          >
+            SOLAR SCALER
+          </span>
+        </div>
         <div className="w-10" />
       </header>
 

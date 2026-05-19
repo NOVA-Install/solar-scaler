@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -58,6 +59,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <div className="flex items-center gap-2 mr-2 shrink-0">
+          <Image src="/logo.png" alt="Solar Scaler" width={32} height={32} className="rounded-full" />
           <span className="font-black uppercase tracking-[0.12em] text-[var(--tx)]" style={{ fontFamily: 'var(--font-mono)', fontSize: 16 }}>SOLAR SCALER</span>
         </div>
 

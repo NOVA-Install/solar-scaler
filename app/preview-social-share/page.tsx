@@ -19,7 +19,7 @@ export default function PreviewSocialShare() {
         >
           <div className="w-full h-full flex flex-col justify-between p-[6%]">
             <div className="flex items-center gap-[2%]">
-              <Image src="/logo.png" alt="Solar Scaler" width={80} height={80} className="rounded-full" style={{ border: '2.5px solid rgba(255,255,255,0.85)' }} />
+              <Image src="/logo.png" alt="Solar Scaler" width={80} height={80} className="rounded-full" style={{ border: 'none' }} />
               <span className="text-white font-black uppercase tracking-[0.05em]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(16px, 2vw, 24px)' }}>
                 SOLAR SCALER
               </span>
@@ -46,7 +46,7 @@ export default function PreviewSocialShare() {
           style={{ aspectRatio: '1200/630', background: 'linear-gradient(180deg, #4ABDE8 0%, #2a9bc8 100%)' }}
         >
           <div className="w-full h-full flex flex-col items-center justify-center gap-[3%] p-[5%]">
-            <Image src="/logo.png" alt="Solar Scaler" width={96} height={96} className="rounded-full" style={{ border: '3px solid rgba(255,255,255,0.85)' }} />
+            <Image src="/logo.png" alt="Solar Scaler" width={96} height={96} className="rounded-full" style={{ border: 'none' }} />
 
             <span className="text-white/70 font-black uppercase tracking-[0.08em]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(12px, 1.4vw, 17px)' }}>
               SOLAR SCALER
@@ -82,7 +82,7 @@ export default function PreviewSocialShare() {
 
             {/* Right: big logo */}
             <div className="flex items-center justify-center pl-[4%]">
-              <Image src="/logo.png" alt="Solar Scaler" width={180} height={180} className="rounded-full" style={{ border: '4px solid rgba(255,255,255,0.3)', boxShadow: '0 8px 40px rgba(0,0,0,0.15)' }} />
+              <Image src="/logo.png" alt="Solar Scaler" width={180} height={180} className="rounded-full" style={{ border: 'none', boxShadow: '0 8px 40px rgba(0,0,0,0.15)' }} />
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function PreviewSocialShare() {
                 Guaranteed solar appointments. Qualified &amp; guaranteed.
               </p>
               <div className="flex items-center gap-[1.5%]">
-                <Image src="/logo.png" alt="Solar Scaler" width={48} height={48} className="rounded-full" style={{ border: '2px solid rgba(255,255,255,0.7)' }} />
+                <Image src="/logo.png" alt="Solar Scaler" width={48} height={48} className="rounded-full" style={{ border: 'none' }} />
                 <span className="text-white/70 font-black uppercase tracking-[0.05em]" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(11px, 1.3vw, 15px)' }}>
                   SOLAR SCALER
                 </span>

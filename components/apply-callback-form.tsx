@@ -109,7 +109,7 @@ export default function ApplyCallbackForm() {
           Get a free call with our team.
         </h1>
         <p className="text-[var(--tx2)] text-[13px] md:text-base leading-snug md:leading-relaxed max-w-md mx-auto">
-          Leave your details. We&apos;ll call you for a quick chat about your setup and how we can help.
+          Leave your details. We&apos;ll call you for a quick chat about your setup and see if we&apos;re a fit.
         </p>
       </div>
 
@@ -127,7 +127,7 @@ export default function ApplyCallbackForm() {
                 autoFocus
                 value={name}
                 onChange={e => setName(e.target.value)}
-                placeholder="Dave Smith"
+                placeholder="Johnathan Smith"
                 className={inputClass}
               />
             </div>
@@ -138,7 +138,7 @@ export default function ApplyCallbackForm() {
                 type="text"
                 value={company}
                 onChange={e => setCompany(e.target.value)}
-                placeholder="Dave's Solar Ltd"
+                placeholder="Johnathan's Solar Ltd"
                 className={inputClass}
               />
             </div>
@@ -154,27 +154,6 @@ export default function ApplyCallbackForm() {
               placeholder="07700 900000"
               className={inputClass}
             />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <p className="text-[10px] md:text-xs font-semibold text-[var(--tx2)] uppercase tracking-[0.08em]">Best time to call</p>
-            <div className="grid grid-cols-3 gap-1.5 md:gap-2">
-              {timeOptions.map(opt => (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() => setCallTime(opt.value)}
-                  className={`rounded-lg md:rounded-xl border px-2 py-2 md:px-3 md:py-2.5 font-medium transition-all text-center ${
-                    callTime === opt.value
-                      ? 'border-[var(--sky)] bg-[rgba(74,189,232,0.08)] text-[var(--tx)]'
-                      : 'border-[var(--bd2)] bg-[var(--sf2)] text-[var(--tx2)] hover:border-[var(--sky)]/40'
-                  }`}
-                >
-                  <span className="block text-[13px] md:text-[14px] leading-none">{opt.label}</span>
-                  <span className="block text-[10px] md:text-[11px] text-[var(--tx3)] mt-0.5 leading-none">{opt.time}</span>
-                </button>
-              ))}
-            </div>
           </div>
 
           <button
@@ -196,9 +175,9 @@ export default function ApplyCallbackForm() {
         <p className="text-[10px] md:text-xs font-semibold text-[var(--tx2)] uppercase tracking-[0.08em] mb-3 md:mb-4">What happens next</p>
         <div className="flex flex-col gap-3 md:gap-4">
           {[
-            { num: '1', title: 'We call you today', desc: 'Quick chat. No pressure.' },
-            { num: '2', title: 'We get you set up', desc: 'Ads, website, CRM. All done for you.' },
-            { num: '3', title: 'Leads start coming in', desc: 'You focus on installs.' },
+            { num: '1', title: 'See if you qualify', desc: 'Short call to assess territory, capacity, and fit.' },
+            { num: '2', title: 'We deploy the platform', desc: 'Marketing, systems, automation, and lead management handled for you.' },
+            { num: '3', title: 'Grow faster with qualified demand', desc: 'Your team installs. We drive growth.' },
           ].map(step => (
             <div key={step.num} className="flex items-start gap-3">
               <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[var(--sky)] flex items-center justify-center shrink-0">

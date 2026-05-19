@@ -14,7 +14,7 @@ export default function NewOfferPage() {
       >
         {/* Wordmark */}
         <div className="w-full flex flex-col items-center pt-6 md:pt-12 pb-0 gap-2">
-          <Image src="/logo.png" alt="Solar Scaler" width={80} height={80} className="rounded-full" style={{ border: '2.5px solid rgba(255,255,255,0.85)', boxShadow: '0 2px 10px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.15)' }} />
+          <Image src="/logo.png" alt="Solar Scaler" width={80} height={80} style={{ filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.8))' }} />
           <span className="text-white font-black uppercase tracking-[0.05em] select-none" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(18px, 2.2vw, 28px)' }}>
             SOLAR SCALER
           </span>
@@ -197,8 +197,8 @@ export default function NewOfferPage() {
                   {/* Divider */}
                   <div className="w-full h-px mb-6" style={{ background: 'var(--bd)' }} />
 
-                  {/* Bonuses */}
-                  <p className="text-[13px] font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--grn)', fontFamily: 'var(--font-mono)' }}>Bonuses</p>
+                  {/* Also Includes */}
+                  <p className="text-[13px] font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--grn)', fontFamily: 'var(--font-mono)' }}>Also Includes</p>
                   <div className="flex flex-col gap-4">
                     {/* NOVA CRM with nested sub-features */}
                     <div className="flex flex-col gap-2.5">

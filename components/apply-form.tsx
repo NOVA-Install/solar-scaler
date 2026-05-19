@@ -204,7 +204,7 @@ export default function ApplyForm() {
                     autoFocus
                     value={data.name}
                     onChange={e => setData(d => ({ ...d, name: e.target.value }))}
-                    placeholder="Dave Smith"
+                    placeholder="Johnathan Smith"
                     className={inputClass}
                   />
                 </div>
@@ -215,7 +215,7 @@ export default function ApplyForm() {
                     type="text"
                     value={data.company}
                     onChange={e => setData(d => ({ ...d, company: e.target.value }))}
-                    placeholder="Dave's Solar Ltd"
+                    placeholder="Johnathan's Solar Ltd"
                     className={inputClass}
                   />
                 </div>
@@ -235,7 +235,7 @@ export default function ApplyForm() {
                     autoFocus
                     value={data.email}
                     onChange={e => setData(d => ({ ...d, email: e.target.value }))}
-                    placeholder="dave@davessolar.co.uk"
+                    placeholder="johnathan@johnathans-solar.co.uk"
                     className={inputClass}
                   />
                 </div>
