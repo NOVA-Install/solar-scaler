@@ -7,11 +7,9 @@ const logos = [
   { src: '/logos/locogen.png', alt: 'Locogen' },
   { src: '/logos/apricum.png', alt: 'Apricum' },
   { src: '/logos/fuse.png', alt: 'Fuse' },
-  { src: '/logos/virgin-media-o2.png', alt: 'Virgin Media O2' },
   { src: '/logos/uswitch.png', alt: 'Uswitch' },
   { src: '/logos/moneysupermarket.png', alt: 'MoneySuperMarket' },
   { src: '/logos/boxt.png', alt: 'Boxt' },
-  { src: '/logos/simmer.png', alt: 'Simmer' },
   { src: '/logos/expressvpn.png', alt: 'ExpressVPN' },
 ]
 
