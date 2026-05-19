@@ -169,7 +169,8 @@ export default function NewOfferPage() {
                   </div>
                 )}
 
-                <div className="px-6 pt-6 pb-6 flex flex-col flex-1">
+
+                <div className="px-7 pt-7 pb-7 flex flex-col flex-1">
                   {/* Tier name */}
                   <p className="text-[13px] font-bold uppercase tracking-[0.1em] mb-4" style={{ fontFamily: 'var(--font-mono)', color: 'var(--tx3)' }}>
                     {tier.name}
@@ -184,7 +185,7 @@ export default function NewOfferPage() {
                   </div>
 
                   {/* Appointments */}
-                  <div className="flex items-baseline gap-2 mb-5">
+                  <div className="flex items-baseline gap-2 mb-7">
                     <span className="text-[28px] font-[700] tracking-tight" style={{ color: 'var(--sky-d)', fontFeatureSettings: '"tnum"' }}>
                       {tier.appointments}
                     </span>
@@ -194,10 +195,10 @@ export default function NewOfferPage() {
                   </div>
 
                   {/* Divider */}
-                  <div className="w-full h-px mb-4" style={{ background: 'var(--bd)' }} />
+                  <div className="w-full h-px mb-6" style={{ background: 'var(--bd)' }} />
 
                   {/* Bonuses */}
-                  <p className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--grn)', fontFamily: 'var(--font-mono)' }}>Bonuses</p>
+                  <p className="text-[13px] font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--grn)', fontFamily: 'var(--font-mono)' }}>Bonuses</p>
                   <div className="flex flex-col gap-4">
                     {/* NOVA CRM with nested sub-features */}
                     <div className="flex flex-col gap-2.5">
@@ -207,8 +208,9 @@ export default function NewOfferPage() {
                           <path d="M6 10l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         <span className="text-[15px] font-semibold leading-normal" style={{ color: 'var(--tx)' }}>
-                          NOVA {tier.nova.plan} CRM
-                          <span className="font-normal ml-1" style={{ color: 'var(--tx2)' }}>(worth {tier.nova.worth})</span>
+                          NOVA Solar Growth Engine
+                          <span className="font-normal ml-1" style={{ color: 'var(--tx3)' }}>— {tier.name}</span>
+                          <span className="font-semibold ml-1" style={{ color: 'var(--sky-d)' }}>(worth {tier.nova.worth})</span>
                         </span>
                       </div>
                       {/* CRM sub-features — indented */}
@@ -231,7 +233,7 @@ export default function NewOfferPage() {
                         </svg>
                         <span className="text-[15px] font-semibold leading-normal" style={{ color: 'var(--tx)' }}>
                           Custom branded website
-                          <span className="font-normal ml-1" style={{ color: 'var(--tx2)' }}>(worth £1,099)</span>
+                          <span className="font-semibold ml-1" style={{ color: 'var(--sky-d)' }}>(worth £1,099)</span>
                         </span>
                       </div>
                     )}
@@ -246,7 +248,7 @@ export default function NewOfferPage() {
             {[
               'Guaranteed appointment volume',
               'Guaranteed qualified, exclusive leads',
-              'Month-to-month. Cancel anytime.',
+              'Cancel anytime. No long-term contracts.',
             ].map((g) => (
               <div key={g} className="flex items-center gap-2">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
@@ -272,7 +274,7 @@ export default function NewOfferPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="st">Included in <span className="ac">every</span> plan</h2>
-            <p className="ssub mt-2">Every plan includes NOVA, our purpose-built solar CRM. <strong>Included at no extra cost.</strong></p>
+            <p className="ssub mt-2">Every plan includes NOVA, our purpose-built solar growth engine. <strong>Included at no extra cost.</strong></p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0" style={{ borderTop: '1px solid var(--bd)' }}>
@@ -281,8 +283,8 @@ export default function NewOfferPage() {
               { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-3-3.87M4 21v-2a4 4 0 013-3.87"/><circle cx="12" cy="7" r="4"/><path d="M12 14v3"/></svg>, title: 'AI agents', desc: 'Qualify, follow up and book appointments around the clock.' },
               { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, title: 'Quote calculator', desc: 'Configure a system and get a customer-ready price in seconds.' },
               { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>, title: 'Data enrichment', desc: 'Postcode, property and Solar API data on every lead.' },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>, title: 'DNO applications', desc: 'Pre-filled G98 and G99 paperwork, ready to submit.' },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, title: 'MCS compliance', desc: 'Checklists aligned with current MCS rules.' },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>, title: 'Instant DNO approval', desc: 'G98 and G99 applications submitted digitally. Auto-approved in seconds where eligible.' },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, title: 'MCS compliance', desc: 'Handover packs and MCS paperwork, auto-generated.' },
               { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>, title: 'Proposals that close', desc: 'On-brand, interactive customer proposals.' },
               { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v1m0 16v1m8.66-13.5l-.87.5M4.21 16.5l-.87.5M20.66 16.5l-.87-.5M4.21 7.5l-.87-.5"/><circle cx="12" cy="12" r="3"/></svg>, title: 'Attribution & tracking', desc: 'See which channels actually convert.' },
               { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="6" height="6" rx="1"/><rect x="16" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><path d="M5 10v2a2 2 0 002 2h2M19 10v2a2 2 0 01-2 2h-2"/></svg>, title: 'Automations', desc: 'Workflows that move work between teams without copy-paste.' },
