@@ -3,6 +3,9 @@
 ## Purpose
 High-converting B2B landing page funnel targeting solar installers. Goal is to get installers to apply for early access / book a call with NOVA.
 
+## TODO: Reconcile duplicate apply pages
+**⚠️ TEMPORARY SETUP:** `/new-offer` has its own apply page at `/new-offer/apply` (Back → `/new-offer`), while the original `/` flow uses `/apply` (Back → `/`). These are identical except for the back link. When the new-offer page becomes the main page, consolidate into a single `/apply` route and remove the duplicate. Flag this to the user when editing or changing page structures.
+
 ## Engineering Standard
 **No quick fixes.** When a problem is identified — especially on mobile — the goal is to build the best possible solution, not the easiest one. Hiding elements, overflow-scroll hacks, or gutting visuals to avoid complexity are not acceptable. If a desktop visual doesn't work on mobile, design a proper mobile version of it. Every section should feel intentional and polished on both mobile and desktop. We are building the smoothest, highest-quality version of this page.
 

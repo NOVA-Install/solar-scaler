@@ -6,13 +6,13 @@ export const metadata = {
   description: 'Book a free 15-minute call with the Solar Scaler team.',
 }
 
-export default function ApplyPage() {
+export default function NewOfferApplyPage() {
   return (
     <main className="bg-white min-h-screen flex flex-col">
 
       {/* Header */}
       <header className="w-full flex items-center justify-between py-3 md:py-5 px-5 md:px-6 max-w-4xl mx-auto">
-        <a href="/" className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[var(--tx3)] hover:text-[var(--tx)] transition-colors">
+        <a href="/new-offer" className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[var(--tx3)] hover:text-[var(--tx)] transition-colors">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -32,10 +32,7 @@ export default function ApplyPage() {
 
       {/* Content */}
       <section className="w-full max-w-4xl mx-auto px-5 md:px-6 pt-1 md:pt-8 pb-0 md:pb-0 flex-1 flex flex-col">
-
-        {/* Form component (includes its own headline, swaps to confirmation on success) */}
         <ApplyCallbackForm />
-
       </section>
 
       {/* Footer */}

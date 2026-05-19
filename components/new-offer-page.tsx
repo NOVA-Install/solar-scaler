@@ -262,7 +262,7 @@ export default function NewOfferPage() {
 
           {/* CTA */}
           <div className="flex flex-col items-center mt-10">
-            <a href="/apply" className="btn-sky text-center" style={{ fontSize: '18px', padding: '18px 48px' }}>
+            <a href="/new-offer/apply" className="btn-sky text-center" style={{ fontSize: '18px', padding: '18px 48px' }}>
               Book a Free Call
             </a>
           </div>
@@ -337,7 +337,7 @@ export default function NewOfferPage() {
           <p className="text-white/80 text-[18px] mb-10">
             Book a free call. No commitment. We&apos;ll show you exactly how it works.
           </p>
-          <a href="/apply" className="btn-white text-center" style={{ fontSize: '18px', padding: '18px 48px' }}>
+          <a href="/new-offer/apply" className="btn-white text-center" style={{ fontSize: '18px', padding: '18px 48px' }}>
             Book a Free Call
           </a>
         </div>
